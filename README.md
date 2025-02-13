@@ -59,12 +59,13 @@ kubectl get po -n deepseek
 
   ``` bash
   # Before Adding Neuron support we need to build the image for the vllm deepseek neuron based deployment.
-  # Let's start by cloning the official vLLM repo and using its official container image with the neuron drivers installed
+  
+  # Let's start by getting the ECR repo name where we'll be pushing the image
+  export ECR_REPO_NEURON=$(terraform output ecr_repository_uri_neuron | jq -r)
+
+  # Now, let's clone the official vLLM repo and use its official container image with the neuron drivers installed
   git clone https://github.com/vllm-project/vllm
   cd vllm
-
-  # Getting ECR repo name
-  export ECR_REPO_NEURON=$(terraform output ecr_repository_uri_neuron | jq -r)
 
   # Building image
   finch build --platform linux/amd64 -f Dockerfile.neuron -t $ECR_REPO_NEURON:0.1 .
