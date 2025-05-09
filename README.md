@@ -46,6 +46,9 @@ To customize the values used to host your model using vLLM, check the [helm.tf](
 This file defines the model to be deployed (**deepseek-ai/DeepSeek-R1-Distill-Llama-8B**) and allows you to pass additional parameters to vLLM. 
 You can modify this file to change resource configurations, node selectors, or tolerations as needed.
 
+> [!WARNING]  
+> Enabling a GPU nodepool and deploying charts will create pods. It will incur additional EC2 instance charges in your AWS account.
+
 ``` bash
 # Let's start by just enabling the GPU based option:
 terraform apply -auto-approve -var="enable_deep_seek_gpu=true" -var="enable_auto_mode_node_pool=true"
