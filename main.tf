@@ -64,7 +64,7 @@ module "vpc" {
 # Use the Terraform EKS module to create an EKS cluster
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.33.1" # Use the latest version available
+  version = "~> 20.0" # Use the latest version available
 
   cluster_name    = local.name
   cluster_version = "1.31" # Specify the EKS version you want to use
