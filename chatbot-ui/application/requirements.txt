@@ -29,7 +29,7 @@ pydantic_core==2.27.2
 pydub==0.25.1
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
-python-multipart==0.0.20
+python-multipart==0.0.22
 pytz==2024.2
 PyYAML==6.0.2
 requests==2.32.3
