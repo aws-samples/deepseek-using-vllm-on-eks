@@ -8,7 +8,7 @@ fastapi==0.115.7
 ffmpy==0.5.0
 filelock==3.17.0
 fsspec==2024.12.0
-gradio==5.13.1
+gradio==6.7.0
 gradio_client==1.6.0
 h11==0.14.0
 httpcore==1.0.7
